@@ -8,6 +8,8 @@ Configures the following:
 - An SES rule to save emails to S3 and then fire a lambda function.
 - A lambda function to receive events from SES and forward emails.
 
+The bundled lambda function comes from: https://github.com/arithmetric/aws-lambda-ses-forwarder.
+
 ## Usage
 
 ```hcl
