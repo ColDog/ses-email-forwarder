@@ -166,7 +166,7 @@ resource "aws_lambda_function" "main" {
   function_name    = "${var.name}-function"
   role             = "${aws_iam_role.main_role.arn}"
   handler          = "index.handler"
-  source_code_hash = "${sha256(data.archive_file.lambda.output_base64sha256)}"
+  source_code_hash = "${sha256(data.template_file.index.rendered)}"
   runtime          = "nodejs8.10"
 
   tags = "${var.tags}"
