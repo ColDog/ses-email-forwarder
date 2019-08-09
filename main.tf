@@ -82,7 +82,7 @@ EOF
 data "template_file" "index" {
   template = "${file("${path.module}/index.js.tpl")}"
 
-  vars {
+  vars = {
     from_email    = "${var.from_email}"
     bucket        = "${aws_s3_bucket.emails.bucket}"
     bucket_prefix = "emails/"
