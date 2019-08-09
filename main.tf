@@ -183,7 +183,7 @@ resource "aws_lambda_permission" "allow_ses" {
 resource "aws_ses_receipt_rule" "main" {
   name          = "${var.name}"
   rule_set_name = "default-rule-set"
-  recipients    = ["${var.recipients}"]
+  recipients    = var.recipients
   enabled       = true
   scan_enabled  = true
 
